@@ -2,6 +2,8 @@
 
 以**可旋转的 3D 地球**与**史诗时间线**为入口，检索世界各国的经典好书。点击地球上的国家即可转到该国并查看其代表作书单，每本书配有从开放数据库抓取的真实封面。
 
+[在线访问](https://simon-byte-png.github.io/world-book-atlas/)
+
 ![tech](https://img.shields.io/badge/React-18-61dafb) ![build](https://img.shields.io/badge/Vite-5-646cff)
 
 ## ✨ 功能
