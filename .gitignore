@@ -1,0 +1,14 @@
+# 依赖
+node_modules/
+
+# 构建产物
+dist/
+
+# 日志与缓存
+*.log
+.DS_Store
+.vite/
+
+# 编辑器
+.vscode/
+.idea/
