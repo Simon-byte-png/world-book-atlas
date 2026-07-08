@@ -3,6 +3,17 @@ import WorldMap from './components/WorldMap.jsx'
 import BookCover from './components/BookCover.jsx'
 import { books, byCountry, maxCount, ERAS, cn, yearLabel } from './data/books.js'
 
+// 外部书籍资源跳转链接
+// Z-Library 域名经常变化或被封锁，失效时只需改这一处即可
+const ZLIB_DOMAIN = '1lib.sk'
+
+function openLibraryUrl(book) {
+  return `https://openlibrary.org/search?title=${encodeURIComponent(book.en || book.title)}`
+}
+function zLibraryUrl(book) {
+  return `https://${ZLIB_DOMAIN}/s/${encodeURIComponent(book.en || book.title)}`
+}
+
 function Scores({ book }) {
   return (
     <div className="scores">
@@ -67,6 +78,14 @@ function BookModal({ book, onClose }) {
               <div className="modal-nobel">🏅 作者获诺贝尔文学奖（{book.nobel} 年）</div>
             )}
             <p className="modal-blurb">{book.blurb}</p>
+            <div className="modal-links">
+              <a className="ext-link" href={openLibraryUrl(book)} target="_blank" rel="noopener noreferrer">
+                📚 Open Library 书目
+              </a>
+              <a className="ext-link" href={zLibraryUrl(book)} target="_blank" rel="noopener noreferrer">
+                📥 Z-Library 电子书
+              </a>
+            </div>
           </div>
         </div>
       </div>
